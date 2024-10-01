@@ -15,7 +15,7 @@
     <AssemblyVersion>1.9.3.0</AssemblyVersion>
     <FileVersion>1.9.3.0</FileVersion>
     <PackageVersion>1.9.3.0</PackageVersion>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>False</SignAssembly>
     <AssemblyOriginatorKeyFile>AutoUpdater.NET.snk</AssemblyOriginatorKeyFile>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageId>Autoupdater.NET.Official</PackageId>
@@ -24,12 +24,13 @@
     <Title>AutoUpdater.NET</Title>
     <Authors>rbsoft</Authors>
     <Description>AutoUpdater.NET is a class library that allows .NET developers to easily add auto update functionality to their WinForms or WPF application projects.</Description>
-    <PackageProjectUrl>https://github.com/ravibpatel/AutoUpdater.NET</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Accantum/AutoUpdater.NET</PackageProjectUrl>
     <PackageTags>autoupdate updater c# vb wpf winforms</PackageTags>
     <PackageReleaseNotes>https://github.com/ravibpatel/AutoUpdater.NET/releases</PackageReleaseNotes>
     <PackageOutputPath>build</PackageOutputPath>
-    <DocumentationFile>$(OutDir)\AutoUpdater.NET.xml</DocumentationFile>
+    <DocumentationFile>$(PROJECTDIR)\bin\AutoUpdater.NET.xml</DocumentationFile>
     <LangVersion>latest</LangVersion>
+    <RepositoryUrl>https://github.com/Accantum/AutoUpdater.NET</RepositoryUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugType>pdbonly</DebugType>
@@ -38,18 +39,15 @@
     <DebugType>full</DebugType>
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
-    <Reference Include="System"/>
-    <Reference Include="System.Data"/>
-    <Reference Include="System.Drawing"/>
-    <Reference Include="System.Windows.Forms"/>
-    <Reference Include="System.Xml"/>
-    <Reference Include="WindowsBase"/>
-    <Reference Include="PresentationFramework"/>
-    <Reference Include="System.Xaml"/>
-    <Reference Include="System.Runtime.Serialization"/>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2739.15"/>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="DownloadUpdateDialog.ar.resx">

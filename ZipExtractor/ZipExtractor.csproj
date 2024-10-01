@@ -15,7 +15,7 @@
         <ApplicationVersion>1.5.3.0</ApplicationVersion>
         <ApplicationIcon>ZipExtractor.ico</ApplicationIcon>
         <ApplicationManifest>app.manifest</ApplicationManifest>
-        <SignAssembly>true</SignAssembly>
+        <SignAssembly>False</SignAssembly>
         <AssemblyOriginatorKeyFile>ZipExtractor.snk</AssemblyOriginatorKeyFile>
         <NeutralLanguage>en</NeutralLanguage>
         <LangVersion>default</LangVersion>
@@ -40,9 +40,9 @@
         <DebugSymbols>false</DebugSymbols>
     </PropertyGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-        <Reference Include="System.IO.Compression"/>
-        <Reference Include="System.IO.Compression.FileSystem"/>
-        <Reference Include="System.Windows.Forms"/>
+        <Reference Include="System.IO.Compression" />
+        <Reference Include="System.IO.Compression.FileSystem" />
+        <Reference Include="System.Windows.Forms" />
     </ItemGroup>
     <ItemGroup>
         <Compile Update="Properties\Settings.Designer.cs">
