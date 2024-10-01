@@ -15,8 +15,8 @@
         <ApplicationVersion>1.5.3.0</ApplicationVersion>
         <ApplicationIcon>ZipExtractor.ico</ApplicationIcon>
         <ApplicationManifest>app.manifest</ApplicationManifest>
-        <SignAssembly>False</SignAssembly>
-        <AssemblyOriginatorKeyFile>ZipExtractor.snk</AssemblyOriginatorKeyFile>
+        <SignAssembly>True</SignAssembly>
+        <AssemblyOriginatorKeyFile>..\..\..\Build\Cert\AccCodeSign.snk</AssemblyOriginatorKeyFile>
         <NeutralLanguage>en</NeutralLanguage>
         <LangVersion>default</LangVersion>
         <IsPackable>false</IsPackable>
@@ -65,5 +65,8 @@
             <LastGenOutput>Settings.Designer.cs</LastGenOutput>
         </None>
     </ItemGroup>
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="c:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Unrestricted -File &quot;..\..\..\Build\SignAssembly.ps1&quot; &quot;$(TargetDir) &quot; &quot;$(TargetName)&quot; &quot;$(ConfigurationName)&quot; &quot;$(SolutionDir) &quot; &quot;&quot;" />
+    </Target>
 
 </Project>
