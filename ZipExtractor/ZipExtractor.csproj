@@ -20,6 +20,7 @@
         <NeutralLanguage>en</NeutralLanguage>
         <LangVersion>default</LangVersion>
         <IsPackable>false</IsPackable>
+        <Configurations>Debug;Release;TFS_Build</Configurations>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(TargetFramework)' != 'net45' ">
         <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
@@ -39,6 +40,13 @@
         <DebugType>none</DebugType>
         <DebugSymbols>false</DebugSymbols>
     </PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'TFS_Build' ">
+		<OutputPath>..\AutoUpdater.NET\Resources</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<DebugType>none</DebugType>
+		<DebugSymbols>false</DebugSymbols>
+	</PropertyGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
         <Reference Include="System.IO.Compression" />
         <Reference Include="System.IO.Compression.FileSystem" />

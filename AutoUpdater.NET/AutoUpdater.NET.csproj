@@ -15,8 +15,8 @@
     <AssemblyVersion>1.9.3.0</AssemblyVersion>
     <FileVersion>1.9.3.0</FileVersion>
     <PackageVersion>1.9.3.0</PackageVersion>
-    <SignAssembly>False</SignAssembly>
-    <AssemblyOriginatorKeyFile>AutoUpdater.NET.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\Build\Cert\AccCodeSign.snk</AssemblyOriginatorKeyFile>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageId>Autoupdater.NET.Official</PackageId>
     <IncludeSymbols>true</IncludeSymbols>
@@ -31,6 +31,7 @@
     <DocumentationFile>$(PROJECTDIR)\bin\AutoUpdater.NET.xml</DocumentationFile>
     <LangVersion>latest</LangVersion>
     <RepositoryUrl>https://github.com/Accantum/AutoUpdater.NET</RepositoryUrl>
+    <Configurations>Debug;Release;TFS_Build</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugType>pdbonly</DebugType>
@@ -38,6 +39,9 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugType>full</DebugType>
   </PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'TFS_Build' ">
+		<DebugType>full</DebugType>
+	</PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -240,4 +244,7 @@
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="c:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Unrestricted -File &quot;..\..\..\Build\SignAssembly.ps1&quot; &quot;$(TargetDir) &quot; &quot;$(TargetName)&quot; &quot;$(ConfigurationName)&quot; &quot;$(SolutionDir) &quot; &quot;&quot;" />
+  </Target>
 </Project>
