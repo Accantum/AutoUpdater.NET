@@ -57,7 +57,7 @@
         </None>
     </ItemGroup>
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="c:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Unrestricted -File &quot;..\..\..\Build\SignAssembly.ps1&quot; &quot;$(TargetDir) &quot; &quot;$(TargetName)&quot; &quot;$(ConfigurationName)&quot; &quot;$(SolutionDir) &quot; &quot;&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)ZipExtractor.exe&quot; &quot;$(SolutionDir)Installer\AutoUpdater.NET\AutoUpdater.NET\Resources\&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)ZipExtractor.exe.config&quot; &quot;$(SolutionDir)Installer\AutoUpdater.NET\AutoUpdater.NET\Resources\&quot;" />
+      <Exec Command="c:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Unrestricted -File &quot;..\..\..\Build\SignAssembly.ps1&quot; &quot;$(TargetDir) &quot; &quot;$(TargetName)&quot; &quot;$(ConfigurationName)&quot; &quot;$(SolutionDir) &quot; &quot;&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)ZipExtractor.exe&quot; &quot;$(ProjectDir)..\AutoUpdater.NET\Resources\&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)ZipExtractor.exe.config&quot; &quot;$(ProjectDir)..\AutoUpdater.NET\Resources\&quot;" />
     </Target>
 
 </Project>
