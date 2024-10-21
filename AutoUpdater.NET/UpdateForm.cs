@@ -18,7 +18,6 @@ internal sealed partial class UpdateForm : Form
     {
         _args = args;
         InitializeComponent();
-        InitializeBrowserControl();
         TopMost = AutoUpdater.TopMost;
 
         if (AutoUpdater.Icon != null)
@@ -42,20 +41,6 @@ internal sealed partial class UpdateForm : Form
         {
             ControlBox = false;
         }
-    }
-
-    private void InitializeBrowserControl()
-    {
-        int reduceHeight = labelReleaseNotes.Height + webBrowser.Height;
-        labelReleaseNotes.Hide();
-        webBrowser.Hide();
-        Height -= reduceHeight;
-    }
-
-    private void UpdateFormLoad(object sender, EventArgs e)
-    {
-        var labelSize = new Size(webBrowser.Width, 0);
-        labelDescription.MaximumSize = labelUpdate.MaximumSize = labelSize;
     }
 
     private void ButtonUpdateClick(object sender, EventArgs e)

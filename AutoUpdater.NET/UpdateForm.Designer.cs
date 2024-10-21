@@ -31,7 +31,6 @@ namespace AutoUpdaterDotNET
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateForm));
-            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.labelUpdate = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelReleaseNotes = new System.Windows.Forms.Label();
@@ -41,12 +40,6 @@ namespace AutoUpdaterDotNET
             this.buttonSkip = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
-            // 
-            // webBrowser
-            // 
-            resources.ApplyResources(this.webBrowser, "webBrowser");
-            this.webBrowser.Name = "webBrowser";
-            this.webBrowser.ScriptErrorsSuppressed = true;
             // 
             // labelUpdate
             // 
@@ -107,14 +100,12 @@ namespace AutoUpdaterDotNET
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonSkip);
             this.Controls.Add(this.buttonRemindLater);
-            this.Controls.Add(this.webBrowser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UpdateForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdateForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UpdateForm_FormClosed);
-            this.Load += new System.EventHandler(this.UpdateFormLoad);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -126,7 +117,6 @@ namespace AutoUpdaterDotNET
         private System.Windows.Forms.Button buttonRemindLater;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonSkip;
-        private System.Windows.Forms.WebBrowser webBrowser;
         private System.Windows.Forms.Label labelUpdate;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelReleaseNotes;
