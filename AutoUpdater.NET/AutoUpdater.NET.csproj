@@ -30,7 +30,8 @@
     <PackageOutputPath>build</PackageOutputPath>
     <DocumentationFile>$(PROJECTDIR)\bin\AutoUpdater.NET.xml</DocumentationFile>
     <LangVersion>latest</LangVersion>
-    <RepositoryUrl>https://github.com/Accantum/AutoUpdater.NET</RepositoryUrl>
+	  <RepositoryUrl>https://github.com/Accantum/AutoUpdater.NET</RepositoryUrl>
+	  <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
     <Configurations>Debug;Release;TFS_Build</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -52,6 +53,9 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="DownloadUpdateDialog.ar.resx">
