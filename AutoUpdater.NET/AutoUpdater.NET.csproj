@@ -11,10 +11,10 @@
     <Company>RBSoft</Company>
     <Product>AutoUpdater.NET</Product>
     <Copyright>Copyright © 2012-2024 RBSoft</Copyright>
-    <Version>1.9.3.0</Version>
-    <AssemblyVersion>1.9.3.0</AssemblyVersion>
-    <FileVersion>1.9.3.0</FileVersion>
-    <PackageVersion>1.9.3.0</PackageVersion>
+    <Version>2.0.0.0</Version>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <PackageVersion>2.0.0.0</PackageVersion>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\..\Build\Cert\AccCodeSign.snk</AssemblyOriginatorKeyFile>
     <NeutralLanguage>en</NeutralLanguage>
@@ -247,6 +247,9 @@
     <EmbeddedResource Update="UpdateForm.zh-TW.resx">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="build\" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="RD /S /Q &quot;$(TargetDir)ar&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)cs&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)da&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)es&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)fr&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)it&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)ja-JP&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)ko&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)lv&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)nl&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)pl&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)pt&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)pt-BR&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)ru&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)sk&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)sv&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)th&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)tr&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)zh&quot;&#xD;&#xA;RD /S /Q &quot;$(TargetDir)zh-TW&quot;&#xD;&#xA;c:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Unrestricted -File &quot;..\..\..\Build\SignAssembly.ps1&quot; &quot;$(TargetDir) &quot; &quot;$(TargetName)&quot; &quot;$(ConfigurationName)&quot; &quot;$(SolutionDir) &quot; &quot;&quot;" />
