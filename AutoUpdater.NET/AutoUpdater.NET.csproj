@@ -14,20 +14,13 @@
     <Version>2.0.0.0</Version>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <FileVersion>2.0.0.0</FileVersion>
-    <PackageVersion>2.0.0.0</PackageVersion>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\..\Build\Cert\AccCodeSign.snk</AssemblyOriginatorKeyFile>
     <NeutralLanguage>en</NeutralLanguage>
-    <PackageId>Autoupdater.NET.Official</PackageId>
     <IncludeSymbols>true</IncludeSymbols>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Title>AutoUpdater.NET</Title>
     <Authors>rbsoft</Authors>
     <Description>AutoUpdater.NET is a class library that allows .NET developers to easily add auto update functionality to their WinForms or WPF application projects.</Description>
-    <PackageProjectUrl>https://github.com/Accantum/AutoUpdater.NET</PackageProjectUrl>
-    <PackageTags>autoupdate updater c# vb wpf winforms</PackageTags>
-    <PackageReleaseNotes>https://github.com/ravibpatel/AutoUpdater.NET/releases</PackageReleaseNotes>
-    <PackageOutputPath>build</PackageOutputPath>
     <DocumentationFile>$(PROJECTDIR)\bin\AutoUpdater.NET.xml</DocumentationFile>
     <LangVersion>latest</LangVersion>
 	  <RepositoryUrl>https://github.com/Accantum/AutoUpdater.NET</RepositoryUrl>
